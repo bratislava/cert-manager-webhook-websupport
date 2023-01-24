@@ -1,0 +1,8 @@
+{
+    "email": "",
+    "apiKeySecretRef": {
+        "name": "websupport-secret"
+    },
+    "ApiKey": "",
+    "ApiSecret": ""
+}
