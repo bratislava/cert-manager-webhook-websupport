@@ -6,7 +6,7 @@ name: Build & Push Image
 #       - published
 on: [push]
 env:
-  IMAGE_NAME: ${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_NAMESPACE }}/${{ github.repository }}
+  IMAGE_NAME: ${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_NAMESPACE }}/${{ github.event.repository.name }}
   IMAGE_TAG: ${{ github.ref_name }}
 jobs:
   build:
