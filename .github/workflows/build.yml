@@ -4,9 +4,9 @@ name: Build & Push Image
 #   release:
 #     types: 
 #       - published
-on: [push, pull_request]
+on: [push]
 env:
-  IMAGE_NAME: ${{ env.HARBOR_REGISTRY }}/${{ $HARBOR_NAMESPACE }}/${{ github.repository }}
+  IMAGE_NAME: $HARBOR_REGISTRY/$HARBOR_NAMESPACE/${{ github.repository }}
   IMAGE_TAG: ${{ github.ref_name }}
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
-          registry: ${{ env.HARBOR_REGISTRY }}
+          registry: $HARBOR_REGISTRY
           username: ${{ secrets.HARBOR_REGISTRY_USERNAME }}
           password: ${{ secrets.HARBOR_REGISTRY_PASSWORD }}
       - name: Build and push
