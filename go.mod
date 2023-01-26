@@ -1,6 +1,6 @@
-module github.com/bratislava/websupport-certmanager-webhook
+module github.com/bratislava/cert-manager-webhook-websupport
 
-go 1.17
+go 1.18
 
 require (
 	github.com/cert-manager/webhook-example v0.0.0-20210224141901-9440683e53e1
