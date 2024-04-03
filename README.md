@@ -4,7 +4,11 @@ The ACME issuer type supports an optional 'webhook' solver, which can be used to
 
 More information about webhooks can be found: https://cert-manager.io/docs/configuration/acme/dns01/webhook/
 
-**:warning: Please note, that this is not official websupport cert-manager webhook, but rather community maintained one.**
+> [!WARNING]
+> Please note, that this is not official websupport cert-manager webhook, but rather community maintained one.
+
+> [!NOTE]
+> Currently, latest release supports these Kubernetes versions: `v1.22` → `v1.28`.
 
 ## Usage
 
