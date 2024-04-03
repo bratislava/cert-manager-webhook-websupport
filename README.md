@@ -6,6 +6,9 @@ More information about webhooks can be found: https://cert-manager.io/docs/confi
 
 **:warning: Please note, that this is not official websupport cert-manager webhook, but rather community maintained one.**
 
+> [!NOTE]
+> Currently, latest release supports these Kubernetes versions: `v1.22` → `v1.28`.
+
 ## Usage
 
 You have to have a working installation of [cert-manager](https://cert-manager.io/) in your kubernetes cluster, before installing this webhook. You can follow these official [instructions](https://cert-manager.io/docs/installation/) to install it.
