@@ -43,7 +43,7 @@ Or lastly you can install directly through Helm and [GitHub release](https://git
 
 ```sh
 helm repo add webhook-websupport https://github.com/bratislava/cert-manager-webhook-websupport/releases/download/<release-name>/
-helm install cert-manager-webhook-websupport websupport-webhook/cert-manager-webhook-websupport  
+helm install cert-manager-webhook-websupport webhook-websupport/cert-manager-webhook-websupport  
 ```
 
 This should install cert-manager into the cluster, to be able to issue certificates under it you need to create an `ClusterIssuer` under the cert-manager.
