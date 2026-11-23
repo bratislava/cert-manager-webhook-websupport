@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"os"
 	"strings"
@@ -118,11 +117,10 @@ func (c *webSupportDNSProviderSolver) Present(ch *v1alpha1.ChallengeRequest) err
 		Content: string(ch.Key),
 		Ttl:     600,
 	})
-	if err != nil && errors.As(err, &websupport.WebsupportError{}) {
-		// Most likely the record already exists. Just skip as we should
-		// tolerate being called multiple times
-		return nil
-	}
+	// A former errors.As check here, meant to skip "record already exists",
+	// used an invalid target and panicked on every error, so all errors
+	// reached cert-manager. Kept that way; tolerating duplicates is a
+	// separate change.
 	return err
 }
 
